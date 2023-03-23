@@ -14,7 +14,7 @@ export default function News({ query, results}){
                                     <div className="col-md-3 col-sm-12">
                                         <img src={result.image} className="img-fluid" alt={result.caption} />    
                                     </div> 
-                                    <div key={result.url} className="col-md-9 col-sm-12">
+                                    <div className="col-md-9 col-sm-12">
                                         <Link href={result.url} target="_blank">
                                             <h4 style={{color: "gray"}}>{result.title}</h4>
                                             <p>{result.paragraph}</p>

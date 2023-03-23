@@ -8,10 +8,10 @@ export default function News({results,title}) {
             <div className="row gx-5 gy-5 py-5">
                 <div className="col-8">
                     <div className="row gx-5 gy-5">
-                        {results.slice(1,-1).map(result => {
+                        {(Array.isArray(results) ? results : []).slice(1,-1).map(result => {
                             return (
                                 <>
-                                    <div className="col-md-3 col-sm-12">
+                                    <div key={result.url} className="col-md-3 col-sm-12">
                                         <img src={result.multimedia && result?.multimedia[0]?.url} className="img-fluid" alt={result.multimedia && result?.multimedia[0]?.caption}/>    
                                     </div> 
                                     <div key={result.url} className="col-md-9 col-sm-12">
@@ -36,7 +36,7 @@ export default function News({results,title}) {
 export async function getStaticPaths() {
   return {
     paths: [{ params: { path: 'science' } },{ params: { path: 'art' } },{ params: { path: 'world' } }],
-    fallback: true, // can also be true or 'blocking'
+    fallback: true,
   }
 }
 
@@ -75,11 +75,5 @@ export async function getStaticProps({params}){
         props: null
       }
 
-  }
-
-  return {
-    props: {
-      results: data.results
-    }
   }
 }
