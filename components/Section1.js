@@ -10,7 +10,7 @@ export default function Section1({results,populars}){
                     <div className="row py-4">
                         <div className="col-md-6 col-sm-12">
                             <img src={results[0]?.multimedia[0]?.url} alt="" className="img-fluid"/>
-                            <h4 className="mt-3" style={{fontWeight: "bold", color: "gray"}}>{results[0]?.title}</h4>
+                            <h4 className="mt-3" style={{fontWeight: "bold", color: "gray"}}><Link href={results[0]?.url}>{results[0]?.title}</Link></h4>
                             {/* <p>{results[0]?.abstract}</p> */}
                             <p><small>{results[0].byline}</small> ,<span>{results[0].published_date.slice(0,10)}</span></p>
                         </div>
@@ -23,7 +23,7 @@ export default function Section1({results,populars}){
                                                 <img src={result?.multimedia[0]?.url} alt="" className="img-fluid"/>
                                             </div>
                                             <div className="col-8">
-                                                <h5 style={{fontWeight: "bold", color: "gray"}}>{result?.title}</h5>
+                                                <h5 style={{fontWeight: "bold", color: "gray"}}><Link href={result?.url}>{result?.title}</Link></h5>
                                                 <p><small>{result?.byline}</small></p>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@ export default function Section1({results,populars}){
                                     </div>
 
                                     <div className="col-10">
-                                        <p>{popular.title}</p>
+                                        <p><Link href={popular.url}>{popular.title}</Link></p>
                                     </div>
                                 </div>
                             )

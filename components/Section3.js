@@ -12,7 +12,7 @@ export default function Section3({results,populars}){
                                 return (
                                     <div key={result.url} className="col-6">
                                         <img src={result?.multimedia[0]?.url} alt={result?.multimedia[0]?.caption} className="img-fluid" style={{height: "250px"}} />
-                                        <h4 className="mt-3">{result?.title}</h4>
+                                        <h4 className="mt-3"><Link href={result.url}>{result?.title}</Link></h4>
                                         <p>{result?.byline}</p>
                                     </div>
                                 )
@@ -36,7 +36,7 @@ export default function Section3({results,populars}){
                                         <img src={popular?.multimedia[0]?.url} alt="" className="img-fluid"/>
                                     </div>
                                     <div className="col-8">
-                                        <h5 style={{fontWeight: "bold", color: "gray"}}>{popular?.title}</h5>
+                                        <h5 style={{fontWeight: "bold", color: "gray"}}><Link href={popular?.url}>{popular?.title}</Link></h5>
                                         <p><small>{popular?.byline}</small></p>
                                     </div>
                                 </div>
