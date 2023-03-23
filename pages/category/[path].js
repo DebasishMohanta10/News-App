@@ -8,7 +8,7 @@ export default function News({results,title}) {
             <div className="row gx-5 gy-5 py-5">
                 <div className="col-8">
                     <div className="row gx-5 gy-5">
-                        {results.slice(1,).map(result => {
+                        {results.slice(1,-1).map(result => {
                             return (
                                 <>
                                     <div className="col-md-3 col-sm-12">
